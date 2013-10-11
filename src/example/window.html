@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>##APP## ##VERSION## - Sample</title>
+        <link rel="stylesheet" type="text/css" href="../libraries/jquery-ui/css/css-customized/jquery-ui-1.10.3.custom.css"/>
+        <link rel="stylesheet" type="text/css" href="css/pmui-##VERSION##.css"/>
+        <script src="../libraries/jquery-ui/js/jquery-1.9.1.js"></script>
+        <script src="../libraries/jquery-ui/js/jquery-ui-1.10.3.custom.js"></script>
+        <script src="../libraries/jquery.layout/jquery.layout.min.js"></script>
+        <script src="js/pmui-##VERSION##.js"></script>
+        <style type="text/css">
+          .ui-layout-resizer    { background: #EEE !important;; border: 1px solid #999; }
+          .ui-layout-toggler    { background: #999 !important; }
+       </style>
+    </head>
+    <script type="text/javascript">
+    $(function(){
+            $('#OptionButtons button').button();
+            $('#OptionButtons').css({ 'text-align':'center', 'panding':'20'})
+    });
+
+                    
+    </script>
+    <body>
+        <h1>##APP## ##VERSION## - Sample</h1>
+        <p>My Window</p>
+        <div id="mydiv"></div>
+        <script type="text/javascript">
+            $(function(){
+                var b = new PMUI.ui.Button({
+                    text: "TreePanel",
+                    handler: function() {
+                        a.open();
+                        a.addItem(new PMUI.panel.TreePanel(p));
+                    }
+                });
+            
+                document.body.appendChild(b.getHTML()); 
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+[
+    {
+        "fileName": "pmUi",
+        "files":[
+            "build/js/*.js",
+            "build/css/*.*",
+            "build/*",
+            "docs/*.*",
+            "README.txt",
+            "LICENSE.txt",
+            "VERSION.txt"
+        ],
+        "type": "full",
+        "copy_to": "dist/"
+    }
+]

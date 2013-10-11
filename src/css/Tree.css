@@ -1,0 +1,18 @@
+/**
+ * TreePanel Class
+ */
+
+/**
+ * TreeItem Class
+ */ 
+
+.pmui-tree {
+    font-size: 10px;
+}
+.pmui-tree div:hover{
+    background-color: #d0e2f4;      
+}
+.pmui-item-treeitem img{
+    margin: 0 5px 0 5px;
+	width: 16px; 
+}

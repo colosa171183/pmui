@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Tree example</title>
+		<title>##APP## ##VERSION## - Tree Sample</title>
+        <link rel="stylesheet" type="text/css" href="css/pmui-##VERSION##.css"/>
+        
+        <script src="../libraries/jquery-ui/js/jquery-1.9.1.js"></script>
+        <script src="../libraries/jquery-ui/js/jquery-ui-1.10.3.custom.js"></script>
+        <script src="../libraries/jquery.layout/jquery.layout.min.js"></script>
+        <script src="js/pmui-##VERSION##.js"></script>
+
+	</head>
+	<body>
+		<script>
+            var a, b, p, tree;
+            p = {
+                id: "myTreeId",
+                collapsed: true,
+                style: {
+                    cssProperties: {
+                        "background-color": "#f2eaea",
+                        "font-size": "10px",
+                        border: "1px solid black"
+                    }
+                },
+                children: [
+                    {
+                        id: "10",
+                        text: "Folder 1",
+                        children: [
+                            {
+                                text: "Element1"
+                            },
+                            {
+                                text: "Folder 3",
+                                children: [
+                                    {
+                                        id: "101",
+                                        text: "Folder 4",
+                                        children: [
+                                            {
+                                                id: "subElementFolderId",
+                                                text: "Folder 5",
+                                                children: [
+                                                    {
+                                                        id: "lastElementId",
+                                                        text: "Last Element"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                text: "Element2"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        id: "102",
+                                        text: "Element2"
+                                    },
+                                    new PMUI.item.TreeItem({
+                                        text: 'Element3'
+                                    }),
+                                    new PMUI.item.TreeItem({
+                                        id: 'mySpecialId',
+                                        text: 'Element4'
+                                    })
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        id: "11",
+                        text: "Folder 2",
+                        icon: "../img/icons/cancel.png",
+                        children: [
+                            {
+                                text: "Element1"
+                            },
+                            {
+                                text : "Element2"
+                            },
+
+                        ]
+                    },
+                    {
+                        id: "12",
+                        text: "Element1",
+                        icon: "../img/icons/information.png"
+                        
+                    },
+                    {
+                        id: "13",
+                        text: "Element2",
+                        icon: "../img/icons/error.png"
+                    }
+                ]
+            };
+            b = {
+                id: "myLayout",
+                height: 500,
+                center: {
+                    cssProperties: {
+                        "background-color": "#91b3e0"
+                    }
+                },
+                west: {
+                    pmType: "treePanel",
+                    id: "myTreeTwoId",
+                    style: {
+                        cssProperties: {
+                            "background-color": "#e3f7e7",
+                            "font-size": "10px"
+                        }
+                    },
+                    children: [
+                        {
+                            text: "My element1",
+                            id: "myFolderId",
+                            children: [
+                                {
+                                    text: "Other Element1"
+                                },
+                                {
+                                    text: "Other Element2"
+                                },
+                                {
+                                    text: "Other Element3"
+                                },
+                                {
+                                    text: "Other Element4"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                east: new PMUI.panel.TreePanel(p),
+                eastConfig: {
+                    size: 300
+                }
+            };
+
+            jQuery(document).ready(function($) {
+                a = new PMUI.panel.LayoutPanel(b);
+                //tree = new PMUI.panel.TreePanel(p),
+                jQuery("body").append(a.getHTML());
+                //jQuery("body").append(tree.getHTML());
+                a.render();
+                tree = a.getItems()[2];
+                tree.render();
+            });
+
+            var addChildToTree = function () {
+                var id = jQuery("#elementId").val();
+                // Get TreePanel child
+                tree = a.getItems()[1];
+                tree.addChildren(
+                    id,
+                    [
+                        {
+                            id: "elementAddedId",
+                            text: "Folder added",
+                            children: [
+                                {
+                                    text: "element1 added"
+                                },
+                                {
+                                    text: "element2 added"
+                                }
+                            ]   
+                        }
+                    ]
+                );
+                
+            };
+            var removeChildFromTree = function  () {
+                var id = jQuery("#elementId").val();
+                tree = a.getItems()[1];
+                tree.removeChildren(id);
+            };
+		</script>
+        <fieldset>
+            <input type="text" id="elementId" placeholder="Enter an identifier">
+            <button onclick="addChildToTree();">Add children to tree</button>
+            <button onclick="removeChildFromTree();">Remove a child from tree</button>
+        </fieldset>
+        <br>
+        
+	</body>
+</html>

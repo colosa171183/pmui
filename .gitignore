@@ -1,0 +1,24 @@
+# IDEs
+.DS_Store
+.buildpath
+.project
+.settings
+.idea
+.dia.autosave
+
+#Building Folders
+reports/
+violations/
+js/
+dist/
+docs/
+index.html
+node_modules/
+<<<<<<< HEAD
+src/example/
+PMUI.dia.autosave
+=======
+build/
+
+!src/example/
+>>>>>>> 8b7d980aa31f677807b1068f5c124b1e53cd4681

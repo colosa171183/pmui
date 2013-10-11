@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>##APP## ##VERSION## - Layout Sample</title>
+        <link rel="stylesheet" type="text/css" href="../libraries/jquery-ui/css/css-customized/jquery-ui-1.10.3.custom.css"/>
+        <link rel="stylesheet" type="text/css" href="css/pmui-##VERSION##.css"/>
+        <script src="../libraries/jquery-ui/js/jquery-1.9.1.js"></script>
+        <script src="../libraries/jquery-ui/js/jquery-ui-1.10.3.custom.js"></script>
+        <script src="../libraries/jquery.layout/jquery.layout.min.js"></script>
+        <script src="js/pmui-##VERSION##.js"></script>
+    </head>
+    <body>
+        <script>
+            var a, b;
+            b = {
+                id: "myLayout",
+                center: {
+                    cssProperties: {
+                        "background-color": "#91b3e0"    
+                    },
+                    cssClasses: ['enrique']
+                },
+                west: {
+                    resizable: false,
+                    closed: true
+                },
+                south: new PMUI.panel.LayoutPanel({
+                    north:{
+                        size: 50
+                    }
+                }),
+                southConfig:{
+                    size: 200
+                },
+                north: {
+                    size: 50,
+                    togglerOpen: 80,
+                    overflow: false
+                },
+                east: {
+                    closable: false
+                },
+                factory: {
+                    products : {
+                        "layout" : PMUI.panel.LayoutPanel,
+                        "panel" : PMUI.core.Panel
+                    },
+                    defaultProduct: "panel"
+                }
+                //height: 500
+            };
+            $(function() {
+                a = new PMUI.panel.LayoutPanel(b);
+                jQuery("body").append(a.createHTML());
+                a.render(true);
+            });
+           
+        </script>
+    </body>
+</html>

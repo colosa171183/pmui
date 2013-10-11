@@ -1,0 +1,42 @@
+.pmui-icon {
+	background-image: url(../img/sprite.png);
+	background-repeat: no-repeat;	
+	display: inline-block;
+}
+
+.pmui-icon-help {
+	background-position: -16px 0px;
+}
+
+.pmui-icon-info {
+	background-position: 0px 0px;
+}
+
+.pmui-icon-error {
+	background-position: -16px -16px;
+}
+
+.pmui-icon-warning {
+	background-position: 0px -16px;
+}
+
+.pmui-tooltip {
+	padding: 0.2em 0.3em;
+	border-radius: 1em;
+}
+
+.pmui-tooltip-message {
+	margin: 0px 5px 0px 3px;
+}
+
+.pmui-tooltip-mode-normal .pmui-tooltip-message {
+	font-size: 0.8em;
+}
+
+.pmui-field-message-container {
+	display: block;
+}
+
+.pmui-tooltip-category-error {
+	color: #F00;
+}

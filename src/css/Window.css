@@ -1,0 +1,62 @@
+.pmui-window-modal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    left: 0px;
+    top: 0px;
+}
+
+.pmui-window,
+.pmui-window-header {
+    cursor: move;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    -moz-border-top-left-radius: 5px;
+    -moz-border-top-right-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -o-border-top-left-radius: 5px;
+    -o-border-top-right-radius: 5px;
+}
+
+.pmui-window {
+    position: absolute;
+    background: #D8D8D8;
+    border: 1px solid #BBB;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+    -o-box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+.pmui-window-title {
+    font-weight: bold;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.pmui-window .pmui-window-close {
+    float: right;
+    background: #888;
+    border: 0px;
+    display: inline-block;
+    width: 1.5em;
+}
+
+.pmui-window-body {
+    background: #F8F8F8;
+    border: 1px solid #aaa;
+    overflow: auto;
+    cursor: default;
+}
+
+.pmui-window-footer {
+    overflow: hidden;
+}
+
+.pmui-button {
+    margin-top: 1%;
+}

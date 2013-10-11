@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>##APP## ##VERSION## - Sample</title>
+        <link rel="stylesheet" type="text/css" href="../libraries/jquery-ui/css/css-customized/jquery-ui-1.10.3.custom.css"/>
+        <link rel="stylesheet" type="text/css" href="css/pmui-##VERSION##.css"/>
+        <script src="../libraries/jquery-ui/js/jquery-1.9.1.js"></script>
+        <script src="../libraries/jquery-ui/js/jquery-ui-1.10.3.custom.js"></script>
+        <script src="../libraries/jquery.layout/jquery.layout.min.js"></script>
+        <script src="js/pmui-##VERSION##.js"></script>
+        <style type="text/css">
+          .ui-layout-resizer    { background: #EEE !important;; border: 1px solid #999; }
+          .ui-layout-toggler    { background: #999 !important; }
+       </style>
+    </head>
+    <body>
+        <h1>##APP## ##VERSION## - Sample</h1>
+        <p>My p</p>
+        <div id="mydiv" title="GC">xx   </div>
+        <script>
+            var p;
+            $(function() {
+                p = new PMUI.form.FormPanel({
+                    width: 600, 
+                    height: 100,
+                    fieldset: true,
+                    legend: "my fieldset panel",
+                    items: [
+                        {
+                            pmType: "text",
+                            label: "Name",
+                            id: "123",
+                            value: "",
+                            placeholder: "insert your name",
+                            name: "name"
+                        },{
+                            pmType: "text",
+                            label: "Last name",
+                            value: "",
+                            placeholder: "your lastname here asshole!",
+                            name: "lastname"
+                        }, {
+                            pmType: "panel",
+                            layout: 'hbox',
+                            items: [
+                                {
+                                    pmType: "text",
+                                    label: "E-mail",
+                                    value: "",
+                                    name: "email"
+                                },{
+                                    pmType: "text",
+                                    label: "Phone",
+                                    value: "555",
+                                    name: "phone"
+                                }
+                            ]
+                        }
+                    ],
+                    layout: "vbox"
+                });
+                document.body.appendChild(p.getHTML());
+                console.log("haha");
+            });
+        </script>
+    </body>
+</html>

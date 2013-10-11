@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>##APP## ##VERSION## - Sample</title>
+        <link rel="stylesheet" type="text/css" href="../libraries/jquery-ui/css/css-customized/jquery-ui-1.10.3.custom.css"/>
+        <link rel="stylesheet" type="text/css" href="css/pmui-##VERSION##.css"/>
+        <script src="../libraries/jquery-ui/js/jquery-1.9.1.js"></script>
+        <script src="../libraries/jquery-ui/js/jquery-ui-1.10.3.custom.js"></script>
+        <script src="../libraries/jquery.layout/jquery.layout.min.js"></script>
+        <script src="js/pmui-##VERSION##.js"></script>
+        <style type="text/css">
+          .ui-layout-resizer    { background: #EEE !important;; border: 1px solid #999; }
+          .ui-layout-toggler    { background: #999 !important; }
+       </style>
+    </head>
+    <body>
+        <h1>##APP## ##VERSION## - Sample</h1>
+        <p>My p</p>
+        <div id="mydiv" title="GC">xx   </div>
+        <script>
+            var a, b, c, d, p;
+            $(function() {
+                // Instantiates a simple info message
+                a = new PMUI.ui.TooltipMessage({
+                    message: "Hi folks! this is a info",
+                    category: "info",
+                    displayMode: "block",
+                    mode: "normal",
+                    visible: false
+                });
+                //Instantiates an error tooltip with mouse tracking option enabled
+                b = new PMUI.ui.TooltipMessage({
+                    message: "Hi folks! this is an error",
+                    category: "error",
+                    track: true,
+                    displayMode: "block"
+                });
+                //Instantiates a warning tooltip with a slide down effect when the tooltip is opened
+                c = new PMUI.ui.TooltipMessage({
+                    message: "Hi folks! this is a warning",
+                    category: "warning",
+                    displayMode: "block",
+                    showEffect: {
+                        effect: "slideDown",
+                        delay: 250
+                    }
+                });
+                //Instantiates a help tooltip with a explode effect when the tooltip is hidden
+                d = new PMUI.ui.TooltipMessage({
+                    message: "Hi folks! this is a help",
+                    category: "help",
+                    displayMode: "block",
+                    hideEffect: {
+                        effect: "explode",
+                        delay: 250
+                    }
+                });
+
+                p = new PMUI.core.Panel({width: 300, height: 200});
+                document.body.appendChild(p.getHTML());
+                p.addItem(new PMUI.core.Element({width: 50, height: 50, style:{cssProperties:{background: "red"}}}));
+                p.addItem(new PMUI.core.Element({width: 50, height: 50, style:{cssProperties:{background: "green"}}}));
+                //p.setLayout("hbox");
+                document.body.appendChild(a.createHTML());
+                document.body.appendChild(b.createHTML());
+                document.body.appendChild(c.createHTML());
+                document.body.appendChild(d.createHTML());
+            });
+            
+        </script>
+    </body>
+</html>

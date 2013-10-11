@@ -1,0 +1,21 @@
+[
+    {
+        "extension": "css",
+        "name" : "pmui",
+        "include_version": true,
+        "construct" : {
+            "base_file" : "src/pmui.css",
+            "replace_pattern" : "///***CODE***///",
+            "version_pattern" : "///***VERSION***///"
+        },
+        "target_path": "build/css/",
+        "files": [
+            "src/css/TooltipMessage.css",
+            "src/css/Window.css",
+            "src/css/Button.css",
+            "src/css/LayoutPanel.css",
+            "src/css/Tree.css",
+            "src/css/Field.css"
+        ]
+    }
+]

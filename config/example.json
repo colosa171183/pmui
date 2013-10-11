@@ -1,0 +1,14 @@
+{
+	"copy_to": "build",
+	"copy_from": "src/example",
+	"files": [
+		"index.html",
+		"tooltip.html",
+		"window.html",
+		"layout.html",
+		"textcontrol.html",
+		"tree.html",
+		"textfield.html",
+		"formpanel.html"
+	]	
+}

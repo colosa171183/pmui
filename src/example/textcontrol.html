@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>##APP## ##VERSION## - Sample</title>
+        <link rel="stylesheet" type="text/css" href="../libraries/jquery-ui/css/css-customized/jquery-ui-1.10.3.custom.css"/>
+        <link rel="stylesheet" type="text/css" href="css/pmui-##VERSION##.css"/>
+        <script src="../libraries/jquery-ui/js/jquery-1.9.1.js"></script>
+        <script src="../libraries/jquery-ui/js/jquery-ui-1.10.3.custom.js"></script>
+        <script src="../libraries/jquery.layout/jquery.layout.min.js"></script>
+        <script src="js/pmui-##VERSION##.js"></script>
+        <style type="text/css">
+          .ui-layout-resizer    { background: #EEE !important;; border: 1px solid #999; }
+          .ui-layout-toggler    { background: #999 !important; }
+       </style>
+    </head>
+    <body>
+        <h1>##APP## ##VERSION## - Sample</h1>
+        <script>
+            var myTextbox;
+            $(function() {
+                myTextbox = new PMUI.control.TextControl({
+                    name: "my_name",
+                    value: "John Doe",
+                    maxLength: 12,
+                    placeholder: "insert your name here",
+                    disabled: false,
+                    onChange: function(currentValue, previousValue) {
+                        if(previousValue !== "") {
+                            alert("Your name is not \"" + previousValue + "\" anymore.\nNow it's \"" + currentValue + "\"");
+                        } else {
+                            alert("Now your name is " + currentValue);
+                        }
+                    }
+                });
+
+                document.body.appendChild(myTextbox.getHTML());
+            });
+            
+        </script>
+    </body>
+</html>
